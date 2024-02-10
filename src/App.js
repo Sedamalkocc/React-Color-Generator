@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
   const [randomColor, setRandomColor] = useState("#FFFFFF");
@@ -9,20 +10,21 @@ function App() {
     setRandomColor(randomColorCode);
   };
 
+  useEffect(() => {
+    document.body.style.backgroundColor = randomColor;
+  }, [randomColor]);
+
   return (
-    <div>
-      <h1>Rastgele Renk Üretici</h1>
-      <div
-        className="container"
-        onClick={generateRandomColor}
-        style={{
-          width: "200px",
-          height: "200px",
-          backgroundColor: randomColor,
-          cursor: "pointer",
-        }}
-      >
-        <button>Tıkla ve rengi değiştir!</button>
+    <div className="container">
+      <h1>Random Color Generator</h1>
+      <div className="color-box" style={{ backgroundColor: randomColor }}>
+        <button onClick={generateRandomColor}>
+          Click and Change The Color!
+        </button>
+        <p>
+          {" "}
+          <b>You can use this {randomColor} color in your projects.</b>
+        </p>
       </div>
     </div>
   );
