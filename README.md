@@ -57,7 +57,7 @@ The application will run at http://localhost:3000 by default. You can see the ap
 
 ## Screenshots
 
-Screenshots are in the **Screenshot** folder.
+Screenshots are in the **ScreenShot** folder.
 
 ## Licence
 
